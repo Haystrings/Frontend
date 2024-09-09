@@ -8,7 +8,7 @@ const SpeedData = () => {
     useEffect(() => {
         const fetchSpeedData = async () => {
             try {
-                const response = await fetch('https://31ae-102-89-84-155.ngrok-free.app/speed_data');
+                const response = await fetch('localhost:3000/speed_data');
                 const data = await response.json();
                 setSpeedData(data);
             } catch (error) {

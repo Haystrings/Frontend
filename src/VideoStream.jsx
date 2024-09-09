@@ -6,11 +6,11 @@ const VideoStream = () => {
     const [isRecording, setIsRecording] = useState(false);
 
     useEffect(() => {
-        setVideoUrl('https://31ae-102-89-84-155.ngrok-free.app/video_feed');
+        setVideoUrl('localhost:3000/video_feed');
     }, []);
 
     const startRecording = () => {
-        fetch('https://31ae-102-89-84-155.ngrok-free.app/start_recording')
+        fetch('localhost:3000/start_recording')
             .then(response => response.json())
             .then(data => {
                 console.log(data.status);
@@ -19,7 +19,7 @@ const VideoStream = () => {
     };
 
     const stopRecording = () => {
-        fetch('https://31ae-102-89-84-155.ngrok-free.app/stop_recording')
+        fetch('localhost:3000/stop_recording')
             .then(response => response.json())
             .then(data => {
                 console.log(data.status);
@@ -28,7 +28,7 @@ const VideoStream = () => {
     };
 
     const handleDownload = () => {
-        window.location.href = 'https://31ae-102-89-84-155.ngrok-free.app/download_video';
+        window.location.href = 'localhost:3000/download_video';
     };
 
     return (
