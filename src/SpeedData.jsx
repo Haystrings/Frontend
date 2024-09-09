@@ -8,7 +8,7 @@ const SpeedData = () => {
     useEffect(() => {
         const fetchSpeedData = async () => {
             try {
-                const response = await fetch('localhost:3000/speed_data');
+                const response = await fetch('localhost:5000/speed_data');
                 const data = await response.json();
                 setSpeedData(data);
             } catch (error) {

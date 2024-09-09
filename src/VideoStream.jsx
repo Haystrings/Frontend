@@ -6,11 +6,11 @@ const VideoStream = () => {
     const [isRecording, setIsRecording] = useState(false);
 
     useEffect(() => {
-        setVideoUrl('localhost:3000/video_feed');
+        setVideoUrl('localhost:5000/video_feed');
     }, []);
 
     const startRecording = () => {
-        fetch('localhost:3000/start_recording')
+        fetch('localhost:5000/start_recording')
             .then(response => response.json())
             .then(data => {
                 console.log(data.status);
@@ -19,7 +19,7 @@ const VideoStream = () => {
     };
 
     const stopRecording = () => {
-        fetch('localhost:3000/stop_recording')
+        fetch('localhost:5000/stop_recording')
             .then(response => response.json())
             .then(data => {
                 console.log(data.status);
@@ -28,7 +28,7 @@ const VideoStream = () => {
     };
 
     const handleDownload = () => {
-        window.location.href = 'localhost:3000/download_video';
+        window.location.href = 'localhost:5000/download_video';
     };
 
     return (
