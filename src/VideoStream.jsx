@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import './alldata.css';
 
 const VideoStream = () => {
-    const [videoUrl, setVideoUrl] = useState('https://340f-102-89-84-155.ngrok-free.app/video_feed');
+    const [videoUrl, setVideoUrl] = useState('https://31ae-102-89-84-155.ngrok-free.app/video_feed');
     const [isRecording, setIsRecording] = useState(false);
 
     useEffect(() => {
-        setVideoUrl('https://340f-102-89-84-155.ngrok-free.app/video_feed');
+        setVideoUrl('https://31ae-102-89-84-155.ngrok-free.app/video_feed');
     }, []);
 
     const startRecording = () => {
-        fetch('https://340f-102-89-84-155.ngrok-free.app/start_recording')
+        fetch('https://31ae-102-89-84-155.ngrok-free.app/start_recording')
             .then(response => response.json())
             .then(data => {
                 console.log(data.status);
@@ -19,7 +19,7 @@ const VideoStream = () => {
     };
 
     const stopRecording = () => {
-        fetch('https://340f-102-89-84-155.ngrok-free.app/stop_recording')
+        fetch('https://31ae-102-89-84-155.ngrok-free.app/stop_recording')
             .then(response => response.json())
             .then(data => {
                 console.log(data.status);
@@ -28,7 +28,7 @@ const VideoStream = () => {
     };
 
     const handleDownload = () => {
-        window.location.href = 'https://340f-102-89-84-155.ngrok-free.app/download_video';
+        window.location.href = 'https://31ae-102-89-84-155.ngrok-free.app/download_video';
     };
 
     return (
