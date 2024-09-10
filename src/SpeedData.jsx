@@ -10,18 +10,19 @@ const SpeedData = () => {
             try {
                 const response = await fetch('https://89ac-102-89-84-228.ngrok-free.app/speed_data');
                 const data = await response.json();
-                console.log('Fetched speed data:', data); // Log fetched data to inspect structure
+                console.log('Fetched speed data:', data);  // Add this line to log the data
                 setSpeedData(data);
             } catch (error) {
                 console.error('Error fetching speed data:', error);
             }
         };
-
+    
         fetchSpeedData();
         const interval = setInterval(fetchSpeedData, 5000); // Refresh data every 5 seconds
-
+    
         return () => clearInterval(interval);
     }, []);
+    
 
     const downloadExcel = () => {
         // Check if speedData is empty
