@@ -31,15 +31,18 @@ const SpeedData = () => {
             return;
         }
 
+        // Convert speedData to array of objects suitable for Excel
         const data = Object.entries(speedData).map(([vehicle, speed]) => ({
             VehicleID: vehicle,
             Speed: `${speed.toFixed(2)} km/h`,
         }));
 
+        // Create a new workbook and add a worksheet
         const worksheet = XLSX.utils.json_to_sheet(data);
         const workbook = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Speed Data');
 
+        // Write file and trigger download
         XLSX.writeFile(workbook, 'speed_data.xlsx');
     };
 
