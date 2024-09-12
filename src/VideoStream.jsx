@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './alldata.css';
 
 const VideoStream = () => {
-    const [videoUrl, setVideoUrl] = useState('');
+    const [videoUrl, setVideoUrl] = useState('https://fbcf-102-89-85-13.ngrok-free.app/video_feed');
     const [isRecording, setIsRecording] = useState(false);
 
     useEffect(() => {
